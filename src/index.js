@@ -5,14 +5,16 @@ import './index.css';
 import { books } from './books';
 import Book from './Book';
 
-
 const Booklist = () => {
   return (
-    <section className="booklist">
-      {books.map((book) => (
-        <Book {...book} key={book.id} />
-      ))}
-    </section>
+    <>
+      <h1>Best Sellers in Books</h1>
+      <section className="booklist">
+        {books.map((book, index) => (
+          <Book {...book} key={book.id} number={index}/>
+        ))}
+      </section>
+    </>
   );
 };
 
